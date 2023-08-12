@@ -19,3 +19,6 @@ keymap("n", "<leader>h", ":bprevious<CR>", opts)
 
 -- DevDocs
 keymap("n", "<leader>dv", ":DevdocsOpenFloat<CR>", opts)
+
+-- Add a ";" in the end of line
+vim.api.nvim_set_keymap("n", "<leader>,", ":lua require('config.module').semicolon()<CR>", opts)
