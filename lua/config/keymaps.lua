@@ -8,8 +8,8 @@ keymap("i", "jk", "<Esc>", opts)
 keymap("n", "<leader>q", ":q<CR>", opts)
 
 -- Window navigation
-keymap("n", "<S-e>", "<C-w>h", opts)
-keymap("n", "<S-o>", "<C-w>l", opts)
+keymap("n", "<S-h>", "<C-w>h", opts)
+keymap("n", "<S-l>", "<C-w>l", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 
@@ -21,4 +21,10 @@ keymap("n", "<leader>h", ":bprevious<CR>", opts)
 keymap("n", "<leader>dv", ":DevdocsOpenFloat<CR>", opts)
 
 -- Add a ";" in the end of line
-vim.api.nvim_set_keymap("n", "<leader>,", ":lua require('config.module').semicolon()<CR>", opts)
+vim.api.nvim_set_keymap("n", ",,", ":lua require('config.module').semicolon()<CR>", opts)
+
+-- Close a buffers
+vim.api.nvim_set_keymap("n", "<leader>x", ":BufferLinePickClose<CR>", opts)
+
+vim.api.nvim_set_keymap("n", "d", '"_d', { noremap = true })
+vim.api.nvim_set_keymap("n", "x", '"_x', { noremap = true })
